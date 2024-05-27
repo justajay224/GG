@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+.main-section {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 80px 0;
+}
+.main-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+.main-section p {
+    font-size: 18px;
+}
+.btn-download {
+    margin-top: 20px;
+}
+.btn-download .btn {
+    font-size: 18px;
+    padding: 10px 30px;
+}
+.btn-outline-light {
+    border-color: white;
+    color: white;
+}
+.btn-outline-light:hover {
+    background-color: white;
+    color: #6a1b9a;
+}
+.main-section img {
+    max-width: 100%;
+    height: auto;
+}
+.stats-section {
+    background-color: #4a148c;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+.stats-section h2 {
+    margin-bottom: 40px;
+}
+.stats-section .stat {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.features-section {
+    background-color: #f3f2fc;
+    padding: 60px 0;
+    text-align: center;
+}
+.features-section h2 {
+    margin-bottom: 40px;
+}
+.feature-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.feature-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.feature-box h4 {
+    margin-bottom: 15px;
+}
+.feature-box:hover {
+    transform: scale(1.05);
+    background-color: #6a1b9a;
+    color: white;
+    cursor: pointer;
+}
+.feature-box:hover h4,
+.feature-box:hover p,
+.feature-box:hover img {
+    color: white;
+}
+.step:hover {
+    transform: scale(1.05);
+    background-color: #6a1b9a;
+    color: white;
+    cursor: pointer;
+}
+
+.steps-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+.steps-section h2 {
+    color: #6a1b9a;
+    margin-bottom: 40px;
+    text-align: right;
+}
+.step {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.step-number {
+    background-color: #6a1b9a;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.step-content {
+    flex-grow: 1;
+}
+.steps-section img {
+    max-width: 100%;
+    height: auto;
+}
+.booking-section {
+    background-color: #f3f2fc;
+    padding: 40px 0;
+    text-align: center;
+}
+.booking-section .btn-booking {
+    background-color: #6a1b9a;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+.booking-section .btn-booking:hover {
+    background-color: #4a148c;
+}
+.features-section h4{
+    color: #52bebc;
+    font-size: 18px;
+    font-weight: bold;
+}
+.features-section p{
+    font-size: 12px;
+}
