@@ -1,25 +1,3 @@
-<!-- resources/views/admin/admin_dashboard.blade.php -->
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    @include('admin.partials.navbar_admin')
-
-    <div class="container mt-5">
-        <h1>Welcome to Admin Dashboard</h1>
-        <!-- Add your dashboard content here -->
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> --}}
-<!-- index.php -->
-<!-- index.php -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Admin | Dashboard</title>
 
     <link
       rel="canonical"
@@ -40,7 +18,6 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,6 +36,34 @@
           font-size: 3.5rem;
         }
       }
+
+      /* Custom Styles */
+      .navbar {
+        background: linear-gradient(45deg, #1e3c72, #5374ad);
+      }
+
+      .card-custom {
+        height: 100%;
+      }
+
+      .card-pesanan {
+        background-color: #f8f9fa;
+        border-left: 4px solid #007bff;
+      }
+
+      .card-kendaraan {
+        background-color: #f8f9fa;
+        border-left: 4px solid #28a745;
+      }
+
+      .card-destinasi {
+        background-color: #f8f9fa;
+        border-left: 4px solid #ffc107;
+      }
+
+      .card-title {
+        font-weight: bold;
+      }
     </style>
 
     <!-- Custom styles for this template -->
@@ -66,7 +71,7 @@
   </head>
   <body>
     
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+<header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"></a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -93,64 +98,34 @@
 
         <div class="row">
           <div class="col-md-3">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm card-custom card-pesanan">
               <div class="card-body">
                 <h5 class="card-title">Pesanan</h5>
-                <p class="card-text">Anda memiliki 10 pesanan baru.</p>
-                <a href="pesanan.php" class="btn btn-primary">Lihat Pesanan</a>
+                <p class="card-text">Anda memiliki {{ $pendingorder }} pesanan yang belum diselesaikan</p>
+                <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-4">Lihat Pesanan</a>
               </div>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm card-custom card-kendaraan">
               <div class="card-body">
                 <h5 class="card-title">Kendaraan</h5>
-                <p class="card-text">5 kendaraan membutuhkan perawatan.</p>
-                <a href="kendaraan.php" class="btn btn-primary">Lihat Kendaraan</a>
+                <p class="card-text">Anda memiliki {{ $kendaraanrusak }} kendaraan yang rusak dan {{ $kendaraanoperasi }} sedang beroperasi</p>
+                <a href="{{ route('kendaraan.index') }}" class="btn btn-primary">Lihat Kendaraan</a>
               </div>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm card-custom card-destinasi">
               <div class="card-body">
                 <h5 class="card-title">Destinasi</h5>
-                <p class="card-text">3 destinasi baru tersedia.</p>
-                <a href="destinasi.php" class="btn btn-primary">Lihat Destinasi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card mb-4 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Pelanggan</h5>
-                <p class="card-text">Anda memiliki 2 pelanggan baru.</p>
-                <a href="pelanggan.php" class="btn btn-primary">Lihat Pelanggan</a>
+                <p class="card-text">{{ $banyakdestinasi }} destinasi yang tersedia.</p>
+                <a href="{{ route('destinasi.index') }}" class="btn btn-primary mt-5">Lihat Destinasi</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <h3>Grafik Pesanan</h3>
-            <canvas id="pesananChart"></canvas>
-          </div>
-          <div class="col-md-6">
-            <h3>Grafik Kendaraan</h3>
-            <canvas id="kendaraanChart"></canvas>
-          </div>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <h3>Grafik Pelanggan</h3>
-            <canvas id="pelangganChart"></canvas>
-          </div>
-          <div class="col-md-6">
-            <h3>Grafik Destinasi</h3>
-            <canvas id="destinasiChart"></canvas>
-          </div>
-        </div>
     </main>
   </div>
 </div>
@@ -174,5 +149,3 @@
 <script src="dashboard.js"></script>
 </body>
 </html>
-
-

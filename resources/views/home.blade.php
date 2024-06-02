@@ -1,4 +1,3 @@
-<!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333;
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
         }
         .main-section {
-            background-color: #6a1b9a;
-            color: white;
+            background-image: url('../images/mobil3.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: rgb(218, 217, 217);
+            z-index: -1;
             padding: 80px 0;
         }
         .main-section h1 {
@@ -73,6 +74,7 @@
             padding: 20px;
             margin: 10px;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            height: 250px;
         }
         .feature-box img {
             width: 50px;
@@ -99,10 +101,13 @@
             color: white;
             cursor: pointer;
         }
-        
         .steps-section {
             background-color: #ffffff;
             padding: 60px 0;
+            transform: scale(0.85);
+            transform-origin: top center;
+            border-radius: 15px;
+            
         }
         .steps-section h2 {
             color: #6a1b9a;
@@ -139,7 +144,6 @@
             height: auto;
         }
         .booking-section {
-            background-color: #f3f2fc;
             padding: 40px 0;
             text-align: center;
         }
@@ -155,17 +159,15 @@
         .booking-section .btn-booking:hover {
             background-color: #4a148c;
         }
-        .features-section h4{
+        .features-section h4 {
             color: #52bebc;
             font-size: 18px;
             font-weight: bold;
         }
-        .features-section p{
+        .features-section p {
             font-size: 12px;
         }
     </style>
-    
-    
 </head>
 <body>
     @include('partials.navbar')
@@ -173,12 +175,12 @@
     <div class="main-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 text-md-left text-center">
+                <div class="col-md-6 text-md-left ">
                     <h1>Pesan Travel Apa Pun, Kapan Pun!</h1>
                     <p>#TravelindoTemanTravelmu</p>
                     <p>Selamat datang di Travelindo, mitra perjalanan Anda untuk menjelajahi Nusantara dan dunia. Nikmati layanan berkualitas tinggi dan perjalanan yang menyenangkan. Dari pantai eksotis hingga pegunungan memukau, kami siap membawa Anda ke destinasi impian dengan nyaman dan aman. Ciptakan kenangan abadi bersama Travelindo.</p>
                     <div class="btn-download">
-                        <a href="{{ url('/transaksi') }}" class="btn btn-outline-light btn-lg">Pesan Sekarang</a>
+                        <a href="{{ url('/transaksi/create') }}" class="btn btn-outline-light btn-lg">Pesan Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
@@ -250,8 +252,7 @@
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h4>Pilih Mobil dan Detail Pemesanan</h4>
-                            <p>Cari mobil sesuai budget dan kebutuhanmu serta pilih destinasi sesuai dengan yang diinginkan. Masukkan nomer telepon, tanggal Keberangkatan, dan jumlah penumpang. 
-                                Pilih metode pembayaran yang diinginkan dan klik Booking Sekarang</p>
+                            <p>Cari mobil sesuai budget dan kebutuhanmu serta pilih destinasi sesuai dengan yang diinginkan. Masukkan nomer telepon, tanggal Keberangkatan, dan jumlah penumpang. Pilih metode pembayaran yang diinginkan dan klik Booking Sekarang</p>
                         </div>
                     </div>
                     <div class="step">
@@ -271,13 +272,14 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="booking-section">
-        <div class="container">
-            <a href="{{ url('/transaksi') }}" class="btn btn-booking">Pesan Sekarang</a>
+        <div class="booking-section">
+            <div class="container">
+                <a href="{{ url('/transaksi/create') }}" class="btn btn-booking">Booking Sekarang</a>
+            </div>
         </div>
     </div>
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

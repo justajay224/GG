@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Palatino';
-            background-image: url('../images/mobil.jpg'); 
+            background-image: url('../images/mobil1.jpg'); 
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -32,24 +32,25 @@
 
         .content {
             text-align: center;
-            color: rgb(207, 172, 96);
+            color: rgb(90, 90, 90);
         }
 
         .warnabtn {
             color: rgb(60, 63, 66);
-            background-color: rgb(216, 207, 78);
+            background-color: rgb(187, 90, 174);
             font-size: 120%; /* Ukuran tombol 150% dari ukuran teks biasa */
             padding: 10px 20px; /* Penyesuaian padding untuk tombol yang lebih besar */
         }
 
         .btn:hover {
-            background-color: rgb(194, 185, 69);
+            background-color: rgb(187, 90, 174);
             color: rgb(121, 123, 124);
         }
 
         h1 {
             font-size: 350%; /* Ukuran teks h1 300% dari ukuran teks biasa */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+            /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); Bayangan teks */
+            color: rgb(187, 90, 174);
         }
 
         h1 span {
@@ -63,8 +64,7 @@
         }
 
         .register-form {
-            background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang kotak transparan */
-            margin-left: 14%;
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 20px;
             border-radius: 10px;
             width: 400px;
@@ -85,8 +85,9 @@
 <body>
     <div class="overlay">
         <div class="content">
-            <h1><span>Daftar untuk Bergabung</span></h1>
+            
             <div class="register-form mt-3">
+                <h1>Register</h1>
                 <form action="" method="post">
                     @csrf
                     <div class="mb-3">

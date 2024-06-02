@@ -15,7 +15,7 @@ class TransaksiController extends Controller
         $kendaraans = Kendaraan::where('status', 'tersedia')->get();
         $destinasis = Destinasi::all();
         return view('transaksi.create', compact('kendaraans', 'destinasis'));
-    }
+    } 
 
     public function store(Request $request)
     {
@@ -45,6 +45,13 @@ class TransaksiController extends Controller
         ]);
 
         return redirect()->route('transaksi.show', $transaksi->id)->with('success', 'Transaksi berhasil dibuat. Silakan lakukan pembayaran.');
+    }
+    
+    public function index()
+    {
+        $user = Auth::user();
+        $transaksi = Transaksi::where('user_id', $user->id)->get(); // Asumsi ada kolom 'user_id' di tabel transaksi
+        return view('transaksi.list', compact('transaksi'));
     }
 
     public function show($id)

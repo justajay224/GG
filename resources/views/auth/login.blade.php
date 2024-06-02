@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Palatino';
-            background-image: url('../images/mobil.jpg'); 
+            background-image: url('../images/mobil2.jpg'); 
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -32,30 +32,30 @@
 
         .content {
             text-align: center;
-            color: rgb(207, 172, 96);
         }
 
         .warnabtn {
             color: rgb(60, 63, 66);
-            background-color: rgb(216, 207, 78);
+            background-color: rgb(235, 121, 245);
             font-size: 120%; /* Ukuran tombol 150% dari ukuran teks biasa */
             padding: 10px 20px; /* Penyesuaian padding untuk tombol yang lebih besar */
         }
 
         .btn:hover {
-            background-color: rgb(194, 185, 69);
+            background-color: rgb(235, 121, 245);
             color: rgb(121, 123, 124);
         }
 
         h1 {
             font-size: 350%; /* Ukuran teks h1 300% dari ukuran teks biasa */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+            /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);  */
+            color: rgb(187, 90, 174);
         }
 
         h1 span {
             display: inline-block;
             /* -webkit-text-stroke: 1px black;  */
-            color: rgb(241, 202, 116);
+            color: rgb(241, 116, 224);
         }
 
         p {
@@ -63,8 +63,7 @@
         }
 
         .login-form {
-            background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang kotak transparan */
-            margin-left: 23%;
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 20px;
             border-radius: 10px;
             width: 400px;
@@ -84,7 +83,7 @@
 <body>
     <div class="overlay">
         <div class="content">
-            <h1><span>Selamat Datang di Aplikasi Kami</span></h1>
+            {{-- <h1><span>Selamat Datang di Travelindo</span></h1> --}}
             <div class="login-form mt-3">
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -95,7 +94,8 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ url('/login') }}" method="post">
+                <form action="{{ route('login') }}" method="post">
+                    <h1>Login</h1>
                     @csrf
                     <div class="mb-3">
                         <input type="text" name="email" class="form-control" placeholder="Email" required>

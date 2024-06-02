@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Template · Bootstrap v5.0</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .navbar {
+            background: linear-gradient(45deg, #1e3c72, #5374ad);
+        }
+    </style>
 </head>
 <body>
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"></a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-            <form action="{{ route('logout') }}" method="post">
-                @csrf
-                <button type="submit" class="btn btn-danger">Logout</button>
-            </form>
+    <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"></a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav">
+          <div class="nav-item text-nowrap">
+              <form action="{{ route('logout') }}" method="post">
+                  @csrf
+                  <button type="submit" class="btn btn-danger">Logout</button>
+              </form>  
+          </div>
         </div>
-    </div>
-</header>
+      </header>
 
 <div class="container-fluid">
     <div class="row">

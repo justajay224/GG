@@ -8,12 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    // Show the login form
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Jika pengguna berhasil login, cek peran pengguna
             if (Auth::user()->role === 'admin') {
                 return redirect()->route('dashboard')->with('success', 'Selamat datang, Admin!');
             } else {
